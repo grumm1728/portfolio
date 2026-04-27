@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Scott Farrar's portfolio: product work, prototypes, case studies, and experiments in learning technology."
+    >
+    <title>Scott Farrar | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar" aria-label="Portfolio sections">
+        <nav class="notebook-nav" aria-label="Portfolio index">
+          <h2>index</h2>
+          <section class="index-section" aria-labelledby="prototypes-heading">
+            <h3 id="prototypes-heading">prototypes</h3>
+            <p>general</p>
+            <a href="https://grumm1728.github.io/myKidsFriendsParents/">kid contact app</a>
+            <p>math / ed</p>
+            <a href="https://grumm1728.github.io/velocitygame/">velocitygame</a>
+          </section>
+
+          <section class="index-section" aria-labelledby="research-heading">
+            <h3 id="research-heading">research</h3>
+            <a href="https://repository.isls.org/handle/1/857">ISLS repository paper</a>
+            <a href="https://early.khanacademy.org/">Khan Academy Kids</a>
+          </section>
+
+          <section class="index-section" aria-labelledby="geogebra-heading">
+            <h3 id="geogebra-heading">geogebra</h3>
+            <a href="https://www.geogebra.org/u/scottfarrar">Scott Farrar on GeoGebra</a>
+          </section>
+        </nav>
+      </aside>
+
+      <main class="notebook-page">
+        <header class="hero" id="about">
+          <p class="eyebrow">product work, learning technology, and useful experiments</p>
+          <h1>Scott Farrar</h1>
+          <section class="intro-block">
+            <div class="intro">
+              <h2>Hi, I'm Scott.</h2>
+              <p>
+                I'm a product manager with a background in edtech. I like turning complex
+                problems into simple, thoughtful solutions, especially when they help people
+                learn, build confidence, or understand something in a new way.
+              </p>
+            </div>
+            <article class="applet-placeholder" aria-label="Interactive quadrilateral diagonal applet">
+              <p class="drag-teaser">drag point C</p>
+              <canvas
+                id="diagonal-canvas"
+                width="720"
+                height="430"
+                aria-label="Drag point C to compare the four diagonal segment lengths"
+              ></canvas>
+            </article>
+          </section>
+        </header>
+
+        <section class="section-heading" id="work">
+          <h2>featured work</h2>
+        </section>
+        <section class="project-grid" id="project-grid" aria-label="Featured work"></section>
+
+        <aside class="belief-note" id="prototypes">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M18 40h12m-10-6h8m-9-5c-3-2-5-5-5-9 0-6 4-10 10-10s10 4 10 10c0 4-2 7-5 9l-1 5h-8z" />
+          </svg>
+          <p><strong>Working note:</strong> the best products start with empathy, curiosity, and a bias for action.</p>
+        </aside>
+
+        <footer class="page-footer">
+          <a href="https://github.com/grumm1728">let's build something meaningful.</a>
+        </footer>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
