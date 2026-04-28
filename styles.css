@@ -188,6 +188,10 @@ svg {
   font-size: 20px;
 }
 
+.applet-frame {
+  min-width: 0;
+}
+
 .section-heading {
   margin: 10px 0 20px;
 }
@@ -295,6 +299,14 @@ svg {
   min-height: 330px;
   cursor: grab;
   background: #fff;
+}
+
+.applet-caption {
+  margin: 10px 4px 0;
+  color: var(--soft);
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .belief-note {

@@ -1,25 +1,27 @@
 const projects = [
   {
-    title: "Kids Contact App",
-    description: "A safer way for kids to stay in touch with people they trust.",
+    title: "Kids Parents Contact App (work in progress)",
+    description: "Exploring views of your kids' friends' parents contact info.",
     url: "https://grumm1728.github.io/myKidsFriendsParents/",
     thumbnail: "phone",
   },
   {
     title: "Velocity Game",
-    description: "A playful prototype for learning through motion, feedback, and iteration.",
+    description: "Can AI build a Calculus manipulative on the fly?",
     url: "https://grumm1728.github.io/velocitygame/",
     thumbnail: "game",
   },
   {
     title: "Split Coins",
-    description: "A small app experiment for splitting costs and making money math clearer.",
+    description:
+      "How might we take ideas from Bret Victor's Ladder of Abstraction and interactively illustrate problems and solutions?",
     url: "https://grumm1728.github.io/SplitCoins/",
     thumbnail: "coins",
   },
   {
     title: "Write Spacer",
-    description: "A writing tool experiment for shaping drafts into something more useful.",
+    description:
+      "Teachers want to turn problems into worksheets. An experiment in improving teacher workflow.",
     url: "https://grumm1728.github.io/writespacer/",
     thumbnail: "writing",
   },
