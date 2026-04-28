@@ -15,7 +15,7 @@ const projects = [
     title: "Split Coins",
     description:
       "How might we take ideas from Bret Victor's Ladder of Abstraction and interactively illustrate problems and solutions?",
-    url: "https://grumm1728.github.io/SplitCoins/",
+    url: "https://grumm1728.github.io/splitcoins/",
     thumbnail: "coins",
   },
   {
