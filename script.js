@@ -25,6 +25,14 @@ const projects = [
     url: "https://grumm1728.github.io/writespacer/",
     thumbnail: "writing",
   },
+  {
+    title: "Teacher Flow Interactive Slides",
+    description:
+      "A product case study on keeping interactive lessons inside the rhythm of classroom instruction.",
+    url: "teacher-flow.html",
+    thumbnail: "teacherFlow",
+    local: true,
+  },
 ];
 
 const thumbnails = {
@@ -68,6 +76,16 @@ const thumbnails = {
       <path d="M38 28h122M38 50h164M38 72h142M38 94h96"></path>
       <path d="m150 100 48-48 16 16-48 48-24 8zM190 60l16 16"></path>
     </svg>`,
+  teacherFlow: `
+    <svg viewBox="0 0 240 132" aria-hidden="true">
+      <path d="M24 98h88M138 98h78"></path>
+      <path d="M42 32h70v50H42zM136 22h78v58h-78z"></path>
+      <path d="M54 46h42M54 60h32M148 38h52M148 52h38"></path>
+      <path d="M112 56c16-8 16-8 24-8"></path>
+      <path d="m128 41 10 7-10 7"></path>
+      <circle cx="74" cy="108" r="11"></circle>
+      <circle cx="176" cy="108" r="11"></circle>
+    </svg>`,
 };
 
 const projectGrid = document.querySelector("#project-grid");
@@ -75,7 +93,7 @@ const projectGrid = document.querySelector("#project-grid");
 projectGrid.innerHTML = projects
   .map(
     (project) => `
-      <a class="project-card" href="${project.url}" target="_blank" rel="noreferrer">
+      <a class="project-card" href="${project.url}"${project.local ? "" : ' target="_blank" rel="noreferrer"'}>
         <span class="thumbnail">${thumbnails[project.thumbnail]}</span>
         <h3>${project.title}</h3>
         <p>${project.description}</p>
