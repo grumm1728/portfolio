@@ -1,5 +1,13 @@
 const projects = [
   {
+    title: "Teacher Flow Interactive Slides",
+    description:
+      "A product case study on keeping interactive lessons inside the rhythm of classroom instruction.",
+    url: "teacher-flow.html",
+    thumbnail: "teacherFlow",
+    local: true,
+  },
+  {
     title: "Kids Parents Contact App (work in progress)",
     description: "Exploring views of your kids' friends' parents contact info.",
     url: "https://grumm1728.github.io/myKidsFriendsParents/",
@@ -24,14 +32,6 @@ const projects = [
       "Teachers want to turn problems into worksheets. An experiment in improving teacher workflow.",
     url: "https://grumm1728.github.io/writespacer/",
     thumbnail: "writing",
-  },
-  {
-    title: "Teacher Flow Interactive Slides",
-    description:
-      "A product case study on keeping interactive lessons inside the rhythm of classroom instruction.",
-    url: "teacher-flow.html",
-    thumbnail: "teacherFlow",
-    local: true,
   },
 ];
 
@@ -78,13 +78,18 @@ const thumbnails = {
     </svg>`,
   teacherFlow: `
     <svg viewBox="0 0 240 132" aria-hidden="true">
-      <path d="M24 98h88M138 98h78"></path>
-      <path d="M42 32h70v50H42zM136 22h78v58h-78z"></path>
-      <path d="M54 46h42M54 60h32M148 38h52M148 52h38"></path>
-      <path d="M112 56c16-8 16-8 24-8"></path>
-      <path d="m128 41 10 7-10 7"></path>
-      <circle cx="74" cy="108" r="11"></circle>
-      <circle cx="176" cy="108" r="11"></circle>
+      <path d="M54 30h126v70H54z"></path>
+      <path d="M44 100h146l12 18H32z"></path>
+      <path d="M96 112c12-4 28-4 40 0"></path>
+      <path d="M64 40h106M64 88h106"></path>
+      <defs>
+        <radialGradient id="ppt-gradient" cx="65%" cy="35%" r="72%">
+          <stop offset="0%" stop-color="#ff9a2f"></stop>
+          <stop offset="100%" stop-color="#d8214b"></stop>
+        </radialGradient>
+      </defs>
+      <rect x="96" y="52" width="42" height="42" rx="12" fill="url(#ppt-gradient)" stroke="none"></rect>
+      <text x="117" y="82" fill="#fff" font-size="28" font-weight="700" text-anchor="middle" stroke="none">P</text>
     </svg>`,
 };
 
