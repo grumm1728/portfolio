@@ -8,11 +8,11 @@ const projects = [
     local: true,
   },
   {
-    title: "KidLinks Parent Network",
+    title: "Kids Parents Contact App",
     description:
       "A double diamond case study on connecting with the parents behind kids' friendships.",
     url: "kidlinks.html",
-    thumbnail: "network",
+    thumbnail: "kidlinksArt",
     local: true,
   },
   {
@@ -22,12 +22,6 @@ const projects = [
     url: "applets/",
     thumbnail: "quadrilateral",
     local: true,
-  },
-  {
-    title: "Kids Parents Contact App (work in progress)",
-    description: "Exploring views of your kids' friends' parents contact info.",
-    url: "https://grumm1728.github.io/myKidsFriendsParents/",
-    thumbnail: "phone",
   },
   {
     title: "Velocity Game",
@@ -119,6 +113,8 @@ const thumbnails = {
       <circle cx="178" cy="48" r="7" fill="#ff0000" stroke="#ff0000"></circle>
       <path d="M166 28c17-15 35-13 46 0"></path>
     </svg>`,
+  kidlinksArt: `
+    <img src="images/kidlinks-family-network.png" alt="" aria-hidden="true">`,
 };
 
 const projectGrid = document.querySelector("#project-grid");
