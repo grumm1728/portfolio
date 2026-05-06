@@ -8,6 +8,14 @@ const projects = [
     local: true,
   },
   {
+    title: "KidLinks Parent Network",
+    description:
+      "A double diamond case study on connecting with the parents behind kids' friendships.",
+    url: "kidlinks.html",
+    thumbnail: "network",
+    local: true,
+  },
+  {
     title: "Kids Parents Contact App (work in progress)",
     description: "Exploring views of your kids' friends' parents contact info.",
     url: "https://grumm1728.github.io/myKidsFriendsParents/",
