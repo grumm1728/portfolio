@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="An interactive function diagram tool inspired by Henri Picciotto's function diagrams."
+    >
+    <title>Function Diagram | Scott Farrar</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../shared/applet.css">
+  </head>
+  <body class="applet-body">
+    <main class="applet-page">
+      <nav class="applet-topbar" aria-label="Applet navigation">
+        <a class="applet-back-link" href="../../index.html">Back to portfolio</a>
+        <a class="applet-index-link" href="../">All math applets</a>
+      </nav>
+
+      <header class="applet-hero">
+        <p class="applet-kicker">functions as mappings</p>
+        <h1>Function Diagram</h1>
+        <p class="applet-subtitle">
+          Watch input values move to output values, then iterate the same function again and again.
+        </p>
+      </header>
+
+      <p class="applet-credit">
+        credit to
+        <a href="https://www.mathed.page/func-diag/" target="_blank" rel="noreferrer">Henri Picciotto</a>.
+      </p>
+
+      <section class="function-tool" aria-label="Interactive function diagram tool">
+        <form class="function-controls" id="function-controls">
+          <div class="control-group">
+            <label for="preset">Preset</label>
+            <select id="preset" name="preset">
+              <option value="2x - 3">f(x)=2x-3</option>
+              <option value="-x">f(x)=-x</option>
+              <option value="x^2">f(x)=x^2</option>
+              <option value="sqrt(x)">f(x)=sqrt(x)</option>
+              <option value="1/x">f(x)=1/x</option>
+              <option value="sin(x)">f(x)=sin(x)</option>
+              <option value="3.2*x*(1-x)">f(x)=3.2x(1-x)</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="expression">Function f(x)</label>
+            <input id="expression" name="expression" value="2x - 3" spellcheck="false">
+          </div>
+
+          <div class="control-group">
+            <label for="x-value">Center x</label>
+            <input id="x-value" name="x-value" type="number" step="0.01" value="3">
+          </div>
+
+          <div class="control-row">
+            <div class="control-group">
+              <label for="domain-width">Width</label>
+              <select id="domain-width" name="domain-width">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8" selected>8</option>
+                <option value="16">16</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="segments">Segments</label>
+              <select id="segments" name="segments">
+                <option value="8">8</option>
+                <option value="16" selected>16</option>
+                <option value="32">32</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control-row">
+            <div class="control-group">
+              <label for="iterations">Iterations</label>
+              <input id="iterations" name="iterations" type="number" min="1" max="5" step="1" value="1">
+            </div>
+          </div>
+
+          <div class="button-row" role="group" aria-label="Diagram mode">
+            <button type="button" data-mode="single" aria-pressed="true">single</button>
+            <button type="button" data-mode="iterate" aria-pressed="false">iterate</button>
+          </div>
+
+          <div class="button-row">
+            <button id="animate" type="button" aria-pressed="false">animate</button>
+            <button id="reset" type="button">reset</button>
+          </div>
+
+          <output class="readout" id="readout" aria-live="polite"></output>
+          <p class="warning" id="warning" aria-live="polite"></p>
+        </form>
+
+        <figure class="function-stage">
+          <svg id="function-svg" viewBox="0 0 920 650" role="img" aria-label="Function diagram visualization"></svg>
+        </figure>
+      </section>
+
+      <p class="applet-note">
+        Drag the red point, animate it, or switch into iteration mode. Undefined values are
+        skipped so the diagram stays readable.
+      </p>
+    </main>
+
+    <script src="../shared/function-diagram.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="An interactive quadrilateral applet for exploring how diagonal segment lengths change."
+    >
+    <title>Quadrilateral Diagonals | Scott Farrar</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../shared/applet.css">
+  </head>
+  <body class="applet-body">
+    <main class="applet-page">
+      <nav class="applet-topbar" aria-label="Applet navigation">
+        <a class="applet-back-link" href="../../index.html">Back to portfolio</a>
+        <a class="applet-index-link" href="../">All math applets</a>
+      </nav>
+
+      <header class="applet-hero">
+        <p class="applet-kicker">quadrilateral diagonals</p>
+        <h1>Drag point C.</h1>
+        <p class="applet-subtitle">
+          Watch the diagonal intersection and compare the four segment lengths as the shape changes.
+        </p>
+      </header>
+
+      <section class="applet-stage" aria-label="Interactive quadrilateral diagonal applet">
+        <p class="drag-teaser">drag point C</p>
+        <canvas
+          id="diagonal-canvas"
+          width="960"
+          height="560"
+          aria-label="Drag point C to compare the four diagonal segment lengths"
+        ></canvas>
+      </section>
+
+      <p class="applet-note">
+        The blue target rings mark a couple of interesting positions. The colored bars at the left
+        compare the four distances from the diagonal intersection.
+      </p>
+    </main>
+
+    <script src="../shared/diagonal-applet.js"></script>
+    <script>
+      window.MathApplets.initQuadrilateralDiagonals("#diagonal-canvas");
+    </script>
+  </body>
+</html>

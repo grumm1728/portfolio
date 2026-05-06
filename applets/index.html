@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A growing collection of interactive math applets by Scott Farrar."
+    >
+    <title>Math Applets | Scott Farrar</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="shared/applet.css">
+  </head>
+  <body class="applet-body">
+    <main class="applet-page">
+      <nav class="applet-topbar" aria-label="Applet navigation">
+        <a class="applet-back-link" href="../index.html">Back to portfolio</a>
+      </nav>
+
+      <header class="applet-hero">
+        <p class="applet-kicker">math / ed applets</p>
+        <h1>Math Applets</h1>
+        <p class="applet-subtitle">
+          Small digital manipulatives for noticing, dragging, testing, and wondering.
+        </p>
+      </header>
+
+      <section class="applet-gallery" id="applet-gallery" aria-label="Math applets"></section>
+    </main>
+
+    <script src="shared/applet-shell.js"></script>
+    <script>
+      window.MathApplets.renderAppletGallery("#applet-gallery");
+    </script>
+  </body>
+</html>
