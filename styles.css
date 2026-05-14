@@ -1663,6 +1663,169 @@ svg {
   margin: -20px 0 -12px;
 }
 
+.algebuds-thumb {
+  width: 100%;
+  height: 140px;
+}
+
+.thumbnail .algebuds-thumb {
+  width: 100%;
+  height: 140px;
+}
+
+.algebuds-page {
+  width: min(1240px, calc(100% - 56px));
+}
+
+.algebuds-hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.86fr) minmax(420px, 1.14fr);
+  gap: clamp(36px, 7vw, 84px);
+  align-items: center;
+  max-width: none;
+  margin-bottom: 52px;
+}
+
+.algebuds-hero-copy {
+  max-width: 620px;
+}
+
+.prototype-link,
+.research-link {
+  display: inline-block;
+  width: fit-content;
+  color: var(--blue);
+  font-size: 22px;
+  line-height: 1.1;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.prototype-link {
+  margin-top: 28px;
+}
+
+.algebuds-scene {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.algebuds-scene svg {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 4px solid var(--ink);
+  border-radius: 8px 5px 9px 6px;
+  background: #8fb9aa;
+  box-shadow: 0 14px 30px rgba(18, 18, 18, 0.12);
+}
+
+.scene-wall {
+  fill: #8fb9aa;
+}
+
+.scene-arc {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 36;
+}
+
+.lesson-board {
+  fill: #b46f3f;
+  stroke: #56416d;
+  stroke-width: 7;
+}
+
+.board-line {
+  fill: none;
+  stroke: #ffd27d;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.equation-card {
+  fill: #8bb6ff;
+  stroke: #333251;
+  stroke-width: 4;
+}
+
+.chalk-step,
+.feedback-arrow,
+.bot-mouth,
+.bot-body-line,
+.bot-stem {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chalk-step {
+  stroke: #ffd55f;
+  stroke-width: 5;
+}
+
+.feedback-arrow {
+  stroke: var(--blue);
+  stroke-width: 5;
+}
+
+.bot-shadow {
+  fill: rgba(18, 18, 18, 0.22);
+}
+
+.bot-antenna {
+  fill: #fff29a;
+  stroke: #56416d;
+  stroke-width: 6;
+}
+
+.bot-stem {
+  stroke: #56416d;
+  stroke-width: 6;
+}
+
+.bot-head {
+  fill: #ef9ab8;
+  stroke: #56416d;
+  stroke-width: 7;
+}
+
+.bot-eye {
+  fill: #403252;
+}
+
+.bot-mouth,
+.bot-body-line {
+  stroke: #403252;
+  stroke-width: 6;
+}
+
+.bot-body {
+  fill: #fff;
+  stroke: #56416d;
+  stroke-width: 7;
+}
+
+.algebuds-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 44px 72px;
+  max-width: 1120px;
+}
+
+.algebuds-section {
+  padding-top: 0;
+}
+
+.algebuds-section p:not(.section-label) {
+  max-width: 100%;
+}
+
+.research-link {
+  margin-top: 18px;
+}
+
 @media (max-width: 1180px) {
   .page-shell {
     grid-template-columns: 1fr;
@@ -1761,6 +1924,15 @@ svg {
   .workflow-arrow {
     justify-self: center;
     rotate: 90deg;
+  }
+
+  .algebuds-hero,
+  .algebuds-copy {
+    grid-template-columns: 1fr;
+  }
+
+  .algebuds-scene {
+    max-width: 640px;
   }
 }
 
@@ -2104,5 +2276,28 @@ svg {
 
   .network-svg {
     height: 350px;
+  }
+
+  .algebuds-page {
+    width: calc(100vw - 24px);
+    max-width: 720px;
+  }
+
+  .algebuds-hero {
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .algebuds-hero h1 {
+    max-width: 340px;
+  }
+
+  .algebuds-copy {
+    gap: 34px;
+  }
+
+  .prototype-link,
+  .research-link {
+    font-size: 21px;
   }
 }

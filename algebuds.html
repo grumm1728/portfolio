@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A brief portfolio explainer for Algebuds, a teachable-agent Algebra 1 prototype."
+    >
+    <title>Algebuds: Teachable Agents for Algebra 1 | Scott Farrar</title>
+    <link rel="stylesheet" href="styles.css?v=algebuds-20260514">
+  </head>
+  <body class="case-body algebuds-body">
+    <main class="case-page algebuds-page">
+      <a class="case-back-link" href="index.html">Back to portfolio</a>
+
+      <header class="case-hero algebuds-hero">
+        <div class="algebuds-hero-copy">
+          <p class="case-kicker">math / ed prototype</p>
+          <h1>Algebuds</h1>
+          <p class="case-subtitle">
+            Teachable agents have rich pedagogy history--how do LLMs support them?
+          </p>
+          <a class="prototype-link" href="https://grumm1728.github.io/algebuds/" target="_blank" rel="noreferrer">
+            Open prototype
+          </a>
+        </div>
+
+        <figure class="algebuds-scene" aria-label="A robot pet learning algebra at a classroom board">
+          <svg viewBox="0 0 520 360" role="img" aria-labelledby="algebuds-scene-title algebuds-scene-desc">
+            <title id="algebuds-scene-title">Algebuds robot at an algebra board</title>
+            <desc id="algebuds-scene-desc">
+              A small robot pet stands by a board with algebra steps, ready to ask a student for feedback.
+            </desc>
+            <rect class="scene-wall" x="0" y="0" width="520" height="360"></rect>
+            <path class="scene-arc" d="M-20 6c82 18 128 76 136 178M-14 180c58 0 96 26 122 76M46 0v360M88 0v360"></path>
+            <rect class="lesson-board" x="86" y="56" width="306" height="178" rx="9"></rect>
+            <path class="board-line" d="M112 86h248"></path>
+            <rect class="equation-card" x="128" y="112" width="96" height="40"></rect>
+            <path class="chalk-step" d="M248 126l86-12M250 156h92M126 184h214"></path>
+            <path class="feedback-arrow" d="M302 196c34 30 66 44 104 48"></path>
+            <path class="feedback-arrow" d="M394 230l18 14-20 10"></path>
+            <ellipse class="bot-shadow" cx="398" cy="296" rx="54" ry="13"></ellipse>
+            <circle class="bot-antenna" cx="410" cy="150" r="17"></circle>
+            <path class="bot-stem" d="M400 178v-22"></path>
+            <rect class="bot-head" x="360" y="170" width="82" height="74" rx="30"></rect>
+            <circle class="bot-eye" cx="386" cy="203" r="8"></circle>
+            <circle class="bot-eye" cx="416" cy="203" r="8"></circle>
+            <path class="bot-mouth" d="M388 222h26"></path>
+            <rect class="bot-body" x="374" y="250" width="54" height="38" rx="12"></rect>
+            <path class="bot-body-line" d="M386 269h28"></path>
+          </svg>
+        </figure>
+      </header>
+
+      <section class="algebuds-copy" aria-label="Algebuds explainer">
+        <article class="case-section algebuds-section">
+          <p class="section-label">inside-out tutoring</p>
+          <p>
+            Algebuds is an experiment in turning the AI tutor relationship inside out. Instead of
+            asking a chatbot for help, students become the teacher for a small eager robot learning
+            Algebra 1. The robot pets ask questions, attempt problems, make mistakes, and ask for
+            feedback. The student's job is not simply to get answers, but to help another learner
+            develop understanding.
+          </p>
+        </article>
+
+        <article class="case-section algebuds-section">
+          <p class="section-label">why robots lead</p>
+          <p>
+            The idea grew from a frustration with a common chatbot learning pattern: students often
+            do not know what questions to ask. A blank prompt box assumes a level of metacognition
+            and confidence that many learners simply do not have yet. Students "don't know what
+            they don't know." In Algebuds, the robots drive the interaction forward by surfacing
+            confusion at the right level and inviting explanation, critique, and correction.
+          </p>
+        </article>
+
+        <article class="case-section algebuds-section">
+          <p class="section-label">recursive feedback</p>
+          <p>
+            Recursive feedback is the idea that tutors learn by watching their students use what
+            they have been taught. In research by Okita and Schwartz, students who taught either
+            human pupils or teachable agents and then observed those pupils attempt problems showed
+            stronger transfer and problem-solving performance than students who simply received
+            direct feedback themselves.
+          </p>
+          <a
+            class="research-link"
+            href="https://aaalab.stanford.edu/assets/papers/2013/Learning_by_teaching_human_pupils.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Read Okita and Schwartz
+          </a>
+        </article>
+
+        <article class="case-section algebuds-section">
+          <p class="section-label">prototype loop</p>
+          <p>
+            Algebuds is designed around this loop. The important moment is not merely explaining an
+            algebra procedure, but seeing a robot pet try to use that explanation, noticing where
+            its understanding breaks down, and then refining the teaching. The robot's mistakes
+            become a visible mirror of the student's own partial understanding. By externalizing
+            reasoning into worked algebra steps, misconceptions, corrections, and retries, the
+            system aims to create a more active and reflective form of AI-supported learning.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
