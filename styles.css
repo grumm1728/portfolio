@@ -1826,6 +1826,45 @@ svg {
   margin-top: 18px;
 }
 
+.algebuds-kitchen {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.68fr) minmax(420px, 1.32fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  margin-top: 72px;
+  padding-top: 42px;
+  border-top: 3px dashed rgba(18, 18, 18, 0.28);
+}
+
+.algebuds-kitchen-copy h2 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.algebuds-kitchen-copy p:not(.section-label) {
+  max-width: 500px;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.28;
+}
+
+.algebuds-gif-frame {
+  min-width: 0;
+  margin: 0;
+}
+
+.algebuds-gif-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 4px solid var(--ink);
+  border-radius: 8px 5px 9px 6px;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(18, 18, 18, 0.12);
+}
+
 @media (max-width: 1180px) {
   .page-shell {
     grid-template-columns: 1fr;
@@ -1933,6 +1972,10 @@ svg {
 
   .algebuds-scene {
     max-width: 640px;
+  }
+
+  .algebuds-kitchen {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2294,6 +2337,15 @@ svg {
 
   .algebuds-copy {
     gap: 34px;
+  }
+
+  .algebuds-kitchen {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
+
+  .algebuds-kitchen-copy p:not(.section-label) {
+    font-size: 21px;
   }
 
   .prototype-link,
