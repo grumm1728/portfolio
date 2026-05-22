@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Math Applets",
     description:
-      "A growing shelf of small interactive math manipulatives, starting with quadrilateral diagonals.",
+      "A growing shelf of small interactive math manipulatives for dragging, tracing, and noticing.",
     url: "applets/",
     thumbnail: "quadrilateral",
     local: true,
@@ -111,15 +111,34 @@ const thumbnails = {
     </svg>`,
   quadrilateral: `
     <svg viewBox="0 0 240 132" aria-hidden="true">
-      <path d="M28 110H214M42 86H214M42 62H214M42 38H214M58 24V116M98 24V116M138 24V116M178 24V116"></path>
-      <path d="M64 96 90 38 178 48 202 96Z" fill="rgba(153, 51, 0, 0.1)" stroke="#993300"></path>
-      <path d="M64 96 178 48M90 38 202 96"></path>
-      <path d="M64 96 126 70" stroke="#ff7f00"></path>
-      <path d="M90 38 126 70" stroke="#004dff"></path>
-      <path d="M178 48 126 70" stroke="#ff00cc"></path>
-      <path d="M202 96 126 70" stroke="#1f7a32"></path>
-      <circle cx="178" cy="48" r="7" fill="#ff0000" stroke="#ff0000"></circle>
-      <path d="M166 28c17-15 35-13 46 0"></path>
+      <g transform="translate(26 38) rotate(-7 54 34)">
+        <rect x="0" y="0" width="92" height="62" fill="#fff" stroke="#121212" stroke-width="3"></rect>
+        <path d="M10 52H82M18 38H82M18 24H82M24 8V56M48 8V56M72 8V56" stroke="rgba(78, 166, 224, 0.46)" stroke-width="1.4"></path>
+        <path d="M18 46 34 16 66 18 78 46Z" fill="rgba(153, 51, 0, 0.12)" stroke="#993300" stroke-width="2"></path>
+        <path d="M18 46 66 18M34 16 78 46" stroke="#121212" stroke-width="2"></path>
+        <path d="M18 46 47 31" stroke="#ff7f00" stroke-width="2"></path>
+        <path d="M34 16 47 31" stroke="#004dff" stroke-width="2"></path>
+        <path d="M66 18 47 31" stroke="#ff00cc" stroke-width="2"></path>
+        <path d="M78 46 47 31" stroke="#1f7a32" stroke-width="2"></path>
+        <circle cx="66" cy="18" r="4" fill="#d01818" stroke="#d01818"></circle>
+      </g>
+      <g transform="translate(76 18) rotate(3 54 34)">
+        <rect x="0" y="0" width="96" height="64" fill="#fff" stroke="#121212" stroke-width="3"></rect>
+        <path d="M12 18H84M12 46H84" stroke="#121212" stroke-width="2.4"></path>
+        <path d="M24 18 36 46M44 18 44 46M56 18 72 46M70 18 58 46" stroke="#0b54b9" stroke-width="2"></path>
+        <path d="M20 13v10M44 13v10M68 13v10M20 41v10M44 41v10M68 41v10" stroke="#121212" stroke-width="2"></path>
+        <circle cx="56" cy="18" r="4" fill="#d01818" stroke="#d01818"></circle>
+      </g>
+      <g transform="translate(122 40) rotate(8 54 34)">
+        <rect x="0" y="0" width="92" height="62" fill="#fff" stroke="#121212" stroke-width="3"></rect>
+        <path d="M10 52H82M18 38H82M18 24H82M24 8V56M48 8V56M72 8V56" stroke="rgba(78, 166, 224, 0.46)" stroke-width="1.4"></path>
+        <path d="M18 20a31 31 0 0 1 62 8" stroke="rgba(11, 84, 185, 0.42)" stroke-dasharray="5 5" stroke-width="2"></path>
+        <path d="M18 20c17 31 43 34 62 8" stroke="#121212" stroke-width="4"></path>
+        <path d="M18 20 80 28" stroke="#0b54b9" stroke-dasharray="5 6" stroke-width="2"></path>
+        <circle cx="18" cy="20" r="4" fill="#121212" stroke="#121212"></circle>
+        <circle cx="80" cy="28" r="5" fill="#d01818" stroke="#d01818"></circle>
+        <circle cx="47" cy="47" r="4" fill="#ff7f00" stroke="#ff7f00"></circle>
+      </g>
     </svg>`,
   kidlinksArt: `
     <img src="images/kidlinks-family-network.png" alt="" aria-hidden="true">`,

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="An interactive catenary applet for exploring a chain hanging between two points."
+    >
+    <title>Catenary Chain | Scott Farrar</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../shared/applet.css">
+  </head>
+  <body class="applet-body">
+    <main class="applet-page">
+      <nav class="applet-topbar" aria-label="Applet navigation">
+        <a class="applet-back-link" href="../../index.html">Back to portfolio</a>
+        <a class="applet-index-link" href="../">All math applets</a>
+      </nav>
+
+      <header class="applet-hero">
+        <p class="applet-kicker">hanging chains</p>
+        <h1>Catenary Chain</h1>
+        <p class="applet-subtitle">
+          Drag point B and change the length S to watch the lowest point of the chain move.
+        </p>
+      </header>
+
+      <p class="applet-credit">
+        construction follows the
+        <a href="https://en.wikipedia.org/wiki/Catenary" target="_blank" rel="noreferrer">catenary setup</a>.
+      </p>
+
+      <aside class="catenary-prompt" aria-label="Catenary locus prompt">
+        <p class="catenary-prompt-meta">Matt Enlow - May 22, 2026</p>
+        <blockquote>
+          A chain has one end fixed at the origin, and the other end is free. When you place that
+          other end at a particular point in the plane, the chain hangs, forming part of a catenary.
+          What is the locus of the lowest point of the chain, as its free end varies?
+        </blockquote>
+      </aside>
+
+      <section class="catenary-tool" aria-label="Interactive catenary chain applet">
+        <form class="catenary-controls" id="catenary-controls">
+          <div class="control-group catenary-length-control">
+            <label for="chain-length">
+              <span>Length S</span>
+              <output id="chain-length-value" for="chain-length">6</output>
+            </label>
+            <input id="chain-length" name="chain-length" type="range" min="1" max="10" step="0.05" value="6">
+          </div>
+
+          <label class="toggle-line catenary-trace-toggle" for="trace-n">
+            <input id="trace-n" name="trace-n" type="checkbox">
+            Trace N
+          </label>
+
+          <button id="clear-trace" type="button">clear trace</button>
+          <button id="reset-chain" type="button">reset</button>
+        </form>
+
+        <figure class="catenary-stage">
+          <p class="drag-teaser">drag point B</p>
+          <canvas
+            id="catenary-canvas"
+            width="960"
+            height="640"
+            aria-label="Drag point B to change a hanging catenary chain from A to B"
+          ></canvas>
+        </figure>
+      </section>
+    </main>
+
+    <script src="../shared/catenary-chain.js"></script>
+    <script>
+      window.MathApplets.initCatenaryChain("#catenary-canvas");
+    </script>
+  </body>
+</html>
