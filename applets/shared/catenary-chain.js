@@ -41,6 +41,10 @@
       floatStart: performance.now(),
       frameId: null,
       hasDragged: false,
+      pathReady: false,
+      playingPath: false,
+      pathStartTime: 0,
+      pathButton: null,
       traceEnabled: defaults.traceEnabled,
       trace: [],
       dragging: false,
@@ -50,6 +54,7 @@
     const minX = 0.2;
     const slackRatio = 0.01;
     const maxTracePoints = 1200;
+    const pathDuration = 5200;
 
     function resizeCanvas() {
       const rect = canvas.getBoundingClientRect();
@@ -120,6 +125,14 @@
       return { x, y };
     }
 
+    function boundaryPoint(angle) {
+      const radius = state.S - slackForLength();
+      return {
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+      };
+    }
+
     function clampCurrentB() {
       state.B = clampB(state.B);
     }
@@ -164,9 +177,9 @@
       return 0.5 * Math.log((1 + clamped) / (1 - clamped));
     }
 
-    function solveCatenary() {
-      const h = state.B.x;
-      const v = state.B.y;
+    function solveCatenaryFor(point) {
+      const h = point.x;
+      const v = point.y;
       const distance = Math.hypot(h, v);
       const slack = slackForLength();
       const S = Math.max(state.S, distance + slack);
@@ -192,6 +205,10 @@
       };
     }
 
+    function solveCatenary() {
+      return solveCatenaryFor(state.B);
+    }
+
     function lowestPoint(solution) {
       if (solution.c >= 0 && solution.c <= solution.h) {
         return { x: solution.c, y: solution.a + solution.b };
@@ -214,6 +231,33 @@
         const x = (solution.h * index) / count;
         return { x, y: solution.yAt(x) };
       });
+    }
+
+    function pathStartAngle() {
+      const radius = state.S - slackForLength();
+      const maxAngle = Math.acos(Math.min(1, minX / radius)) - 0.02;
+      let low = 0;
+      let high = maxAngle;
+
+      for (let index = 0; index < 48; index += 1) {
+        const mid = (low + high) / 2;
+        const solution = solveCatenaryFor(boundaryPoint(mid));
+        if (solution.c > 0) {
+          low = mid;
+        } else {
+          high = mid;
+        }
+      }
+
+      return (low + high) / 2;
+    }
+
+    function pathAngles() {
+      const start = pathStartAngle();
+      return {
+        start,
+        end: -start,
+      };
     }
 
     function drawGrid() {
@@ -326,6 +370,63 @@
       }
     }
 
+    function drawSnapStart() {
+      if (state.playingPath) {
+        return;
+      }
+
+      const target = state.transform.toScreen(boundaryPoint(pathAngles().start));
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(target.x, target.y, 14, 0, Math.PI * 2);
+      ctx.strokeStyle = state.pathReady ? "rgba(255, 127, 0, 0.74)" : "rgba(11, 84, 185, 0.48)";
+      ctx.lineWidth = 2.5;
+      ctx.setLineDash([5, 5]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = state.pathReady ? colors.trace : colors.blue;
+      ctx.font = "700 15px Proxima Nova, Helvetica Neue, Arial, sans-serif";
+      ctx.fillText("start", target.x + 12, target.y - 14);
+      ctx.restore();
+    }
+
+    function drawPlayButton() {
+      state.pathButton = null;
+
+      if (!state.pathReady || state.playingPath) {
+        return;
+      }
+
+      const width = 112;
+      const height = 38;
+      const x = state.transform.width - width - 18;
+      const y = state.transform.height - height - 18;
+      state.pathButton = { x, y, width, height };
+
+      ctx.save();
+      ctx.fillStyle = "#fff";
+      ctx.strokeStyle = colors.ink;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(x, y, width, height, 5);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = colors.blue;
+      ctx.beginPath();
+      ctx.moveTo(x + 18, y + 12);
+      ctx.lineTo(x + 18, y + 26);
+      ctx.lineTo(x + 31, y + 19);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = colors.ink;
+      ctx.font = "700 16px Proxima Nova, Helvetica Neue, Arial, sans-serif";
+      ctx.fillText("play path", x + 39, y + 24);
+      ctx.restore();
+    }
+
     function drawPoint(point, label, options = {}) {
       const screen = state.transform.toScreen(point);
       const radius = options.radius || 5;
@@ -398,6 +499,7 @@
 
       drawGrid();
       drawFeasibleRegion();
+      drawSnapStart();
       drawTrace();
       drawChain(solution);
       drawPoint({ x: 0, y: 0 }, "A", { labelColor: colors.ink, labelX: -18, labelY: -10 });
@@ -413,6 +515,7 @@
         labelColor: colors.trace,
       });
       drawDragArrow();
+      drawPlayButton();
     }
 
     function pointerPosition(event) {
@@ -427,6 +530,31 @@
       const position = pointerPosition(event);
       const bScreen = state.transform.toScreen(state.B);
       return Math.hypot(position.x - bScreen.x, position.y - bScreen.y) < 30;
+    }
+
+    function inPathButton(event) {
+      if (!state.pathButton) {
+        return false;
+      }
+      const position = pointerPosition(event);
+      return (
+        position.x >= state.pathButton.x &&
+        position.x <= state.pathButton.x + state.pathButton.width &&
+        position.y >= state.pathButton.y &&
+        position.y <= state.pathButton.y + state.pathButton.height
+      );
+    }
+
+    function snapToPathStartIfClose(point) {
+      const start = boundaryPoint(pathAngles().start);
+
+      if (Math.hypot(point.x - start.x, point.y - start.y) < 0.22) {
+        state.pathReady = true;
+        return start;
+      }
+
+      state.pathReady = false;
+      return point;
     }
 
     function recordTrace() {
@@ -445,6 +573,12 @@
     }
 
     function onPointerDown(event) {
+      if (inPathButton(event)) {
+        event.preventDefault();
+        playPath();
+        return;
+      }
+
       if (!nearB(event)) {
         return;
       }
@@ -457,12 +591,14 @@
 
     function onPointerMove(event) {
       if (!state.dragging) {
-        canvas.style.cursor = nearB(event) ? "grab" : "default";
+        canvas.style.cursor = inPathButton(event) ? "pointer" : nearB(event) ? "grab" : "default";
         return;
       }
 
       event.preventDefault();
-      state.B = clampB(state.transform.toWorld(pointerPosition(event)));
+      state.playingPath = false;
+      const clamped = clampB(state.transform.toWorld(pointerPosition(event)));
+      state.B = snapToPathStartIfClose(clamped);
       recordTrace();
       draw();
     }
@@ -482,6 +618,8 @@
       state.S = Number(fields.length.value);
       fields.lengthValue.value = fmt(state.S);
       state.hasDragged = true;
+      state.pathReady = false;
+      state.playingPath = false;
       clampCurrentB();
       recordTrace();
       draw();
@@ -504,19 +642,56 @@
       state.floatCenter = { ...defaults.B };
       state.floatStart = performance.now();
       state.hasDragged = false;
+      state.pathReady = false;
+      state.playingPath = false;
       state.traceEnabled = defaults.traceEnabled;
       state.trace = [];
       syncControls();
       draw();
     });
 
+    function playPath() {
+      state.playingPath = true;
+      state.hasDragged = true;
+      state.pathReady = true;
+      state.traceEnabled = true;
+      state.trace = [];
+      fields.trace.checked = true;
+      state.pathStartTime = performance.now();
+      recordTrace();
+      draw();
+    }
+
+    function animatePath() {
+      if (!state.playingPath) {
+        return false;
+      }
+
+      const t = Math.min(1, (performance.now() - state.pathStartTime) / pathDuration);
+      const eased = 0.5 - 0.5 * Math.cos(t * Math.PI);
+      const angles = pathAngles();
+      const angle = angles.start + (angles.end - angles.start) * eased;
+      state.B = boundaryPoint(angle);
+      recordTrace();
+
+      if (t >= 1) {
+        state.playingPath = false;
+      }
+
+      return true;
+    }
+
     function floatBeforeDrag() {
+      const pathMoved = animatePath();
+
       if (!state.hasDragged && !state.dragging) {
         const t = (performance.now() - state.floatStart) / 1000;
         state.B = clampB({
           x: state.floatCenter.x + Math.sin(t * 0.82) * 0.11,
           y: state.floatCenter.y + Math.cos(t * 0.68) * 0.08,
         });
+        draw();
+      } else if (pathMoved) {
         draw();
       }
 
