@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="A brief portfolio explainer for Algebuds, a teachable-agent Algebra 1 prototype."
+      content="A portfolio case study for Algebuds, a student-tutors-chatbot Algebra 1 prototype built around recursive feedback."
     >
-    <title>Algebuds: Teachable Agents for Algebra 1 | Scott Farrar</title>
-    <link rel="stylesheet" href="styles.css?v=algebuds-20260517">
+    <title>Algebuds: Student Tutors Chatbot | Scott Farrar</title>
+    <link rel="stylesheet" href="styles.css?v=algebuds-20260522">
   </head>
   <body class="case-body algebuds-body">
     <main class="case-page algebuds-page">
@@ -16,116 +16,330 @@
 
       <header class="case-hero algebuds-hero">
         <div class="algebuds-hero-copy">
-          <p class="case-kicker">math / ed prototype</p>
-          <h1>Algebuds</h1>
+          <p class="case-kicker">learning design case study</p>
+          <h1>Algebuds: Student Tutors Chatbot</h1>
           <p class="case-subtitle">
-            Teachable agents have rich pedagogy history--how do LLMs support them?
+            The student is no longer a recipient of explanations, they are the source of them.
           </p>
-          <a class="prototype-link" href="https://grumm1728.github.io/algebuds/" target="_blank" rel="noreferrer">
-            Open prototype
-          </a>
         </div>
 
-        <figure class="algebuds-scene" aria-label="A robot pet learning algebra at a classroom board">
-          <svg viewBox="0 0 520 360" role="img" aria-labelledby="algebuds-scene-title algebuds-scene-desc">
-            <title id="algebuds-scene-title">Algebuds robot at an algebra board</title>
-            <desc id="algebuds-scene-desc">
-              A small robot pet stands by a board with algebra steps, ready to ask a student for feedback.
-            </desc>
-            <rect class="scene-wall" x="0" y="0" width="520" height="360"></rect>
-            <path class="scene-arc" d="M-20 6c82 18 128 76 136 178M-14 180c58 0 96 26 122 76M46 0v360M88 0v360"></path>
-            <rect class="lesson-board" x="86" y="56" width="306" height="178" rx="9"></rect>
-            <path class="board-line" d="M112 86h248"></path>
-            <rect class="equation-card" x="128" y="112" width="96" height="40"></rect>
-            <path class="chalk-step" d="M248 126l86-12M250 156h92M126 184h214"></path>
-            <path class="feedback-arrow" d="M302 196c34 30 66 44 104 48"></path>
-            <path class="feedback-arrow" d="M394 230l18 14-20 10"></path>
-            <ellipse class="bot-shadow" cx="398" cy="296" rx="54" ry="13"></ellipse>
-            <circle class="bot-antenna" cx="410" cy="150" r="17"></circle>
-            <path class="bot-stem" d="M400 178v-22"></path>
-            <rect class="bot-head" x="360" y="170" width="82" height="74" rx="30"></rect>
-            <circle class="bot-eye" cx="386" cy="203" r="8"></circle>
-            <circle class="bot-eye" cx="416" cy="203" r="8"></circle>
-            <path class="bot-mouth" d="M388 222h26"></path>
-            <rect class="bot-body" x="374" y="250" width="54" height="38" rx="12"></rect>
-            <path class="bot-body-line" d="M386 269h28"></path>
-          </svg>
+        <figure class="algebuds-shot algebuds-hero-shot">
+          <img
+            src="images/algebuds-pdf-page3-3.png"
+            alt="Dot works through an equation in a notebook while chatting with the student tutor."
+          >
+          <figcaption>
+            Dot uses the student's explanation in the workbook, making the student's thinking visible.
+          </figcaption>
         </figure>
       </header>
 
-      <section class="algebuds-copy" aria-label="Algebuds explainer">
+      <section class="algebuds-paper" aria-label="Algebuds design rationale">
         <article class="case-section algebuds-section">
-          <p class="section-label">inside-out tutoring</p>
+          <p class="section-label">introduction</p>
           <p>
-            Algebuds is an experiment in turning the AI tutor relationship inside out. Instead of
-            asking a chatbot for help, students become the teacher for a small eager robot learning
-            Algebra 1. The robot pets ask questions, attempt problems, make mistakes, and ask for
-            feedback. The student's job is not simply to get answers, but to help another learner
-            develop understanding.
+            You may be familiar with Seymour Papert's LOGO turtle<sup><a href="#ref-papert">1</a></sup>,
+            which draws shapes on screen given programmed instructions from elementary school students.
+            In one story, a child sees
+            <button class="logo-command" type="button" data-logo-command="short">FW 10</button>
+            draw a line, and is asked now to draw a square. He scripts
+            <button class="logo-command" type="button" data-logo-command="long">FW 10 FW 10 FW 10 FW 10</button>,
+            and watches as the turtle draws... a longer line.
+          </p>
+          <p>
+            In this moment, the child received "recursive feedback" and had the opportunity to refine
+            his understanding and explanation of a square. He excitedly asks how to make the turtle turn...
+          </p>
+        </article>
+
+        <figure class="logo-writer" aria-label="Interactive LOGOwriter turtle drawing">
+          <svg class="logo-writer-canvas" viewBox="0 0 540 300" role="img" aria-labelledby="logo-writer-title logo-writer-desc">
+            <title id="logo-writer-title">LOGOwriter turtle drawing demo</title>
+            <desc id="logo-writer-desc">
+              Selecting FW 10 draws a short line. Selecting FW 10 FW 10 FW 10 FW 10 adds a second turtle that draws a longer line.
+            </desc>
+            <defs>
+              <pattern id="logo-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0H0V20" fill="none"></path>
+              </pattern>
+            </defs>
+            <rect class="logo-grid-bg" width="540" height="300"></rect>
+            <path class="logo-axis" d="M58 104H490M58 216H490"></path>
+            <path class="logo-line logo-line-short" d="M78 104H178" pathLength="1"></path>
+            <path class="logo-line logo-line-long" d="M78 216H478" pathLength="1"></path>
+            <g class="logo-turtle logo-turtle-one" aria-hidden="true">
+              <path class="turtle-shell" d="M0-14 13-5 13 6 0 14-13 6-13-5Z"></path>
+              <path class="turtle-limbs" d="M-13-4l-8-7M13-4l8-7M-13 5l-9 6M13 5l9 6M0-14v-8"></path>
+            </g>
+            <g class="logo-turtle logo-turtle-two" aria-hidden="true">
+              <path class="turtle-shell" d="M0-14 13-5 13 6 0 14-13 6-13-5Z"></path>
+              <path class="turtle-limbs" d="M-13-4l-8-7M13-4l8-7M-13 5l-9 6M13 5l9 6M0-14v-8"></path>
+            </g>
+          </svg>
+        </figure>
+
+        <article class="case-section algebuds-section">
+          <p class="section-label">problem</p>
+          <h2>Chatbot tutors aren't working for most students.</h2>
+          <p>
+            Chatbot tutors aren't working for most students<sup><a href="#ref-meyer">2</a></sup>.
+            They can supply explanations and answer lots of questions, but in doing so they take on
+            all the cognitive work. Students lapse into passivity: "idk". The typical chatbot tutor
+            assumes the student comes with a question; the chatbot comes with the answer. This leaves
+            little room for students to put their own ideas in.
           </p>
         </article>
 
         <article class="case-section algebuds-section">
-          <p class="section-label">why robots lead</p>
+          <p class="section-label">solution</p>
+          <h2>In this prototype I flip the tutoring roles.</h2>
           <p>
-            The idea grew from a frustration with a common chatbot learning pattern: students often
-            do not know what questions to ask. A blank prompt box assumes a level of metacognition
-            and confidence that many learners simply do not have yet. Students "don't know what
-            they don't know." In Algebuds, the robots drive the interaction forward by surfacing
-            confusion at the right level and inviting explanation, critique, and correction.
-          </p>
-        </article>
-
-        <article class="case-section algebuds-section">
-          <p class="section-label">recursive feedback</p>
-          <p>
-            Recursive feedback is the idea that tutors learn by watching their students use what
-            they have been taught. In research by Okita and Schwartz, students who taught either
-            human pupils or teachable agents and then observed those pupils attempt problems showed
-            stronger transfer and problem-solving performance than students who simply received
-            direct feedback themselves.
-          </p>
-          <a
-            class="research-link"
-            href="https://aaalab.stanford.edu/assets/papers/2013/Learning_by_teaching_human_pupils.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Read Okita and Schwartz
-          </a>
-        </article>
-
-        <article class="case-section algebuds-section">
-          <p class="section-label">prototype loop</p>
-          <p>
-            Algebuds is designed around this loop. The important moment is not merely explaining an
-            algebra procedure, but seeing a robot pet try to use that explanation, noticing where
-            its understanding breaks down, and then refining the teaching. The robot's mistakes
-            become a visible mirror of the student's own partial understanding. By externalizing
-            reasoning into worked algebra steps, misconceptions, corrections, and retries, the
-            system aims to create a more active and reflective form of AI-supported learning.
+            In this prototype I flip the tutoring roles. The agent-as-tutee (AT) is the one asking
+            for help, and the student user (SU) is the tutor. The AT is deliberately constrained so
+            that it cannot solve the problems on its own. It genuinely needs the student's ideas to
+            proceed. Now the student is no longer a recipient of explanations, they are the source
+            of them.
           </p>
         </article>
       </section>
 
-      <section class="algebuds-kitchen" aria-label="Algebuds kitchen mode work in progress">
-        <div class="algebuds-kitchen-copy">
-          <p class="section-label">work in progress</p>
-          <h2>Kitchen mode</h2>
+      <section class="algebuds-wide-section" aria-label="Algebuds classroom and workbook environment">
+        <figure class="algebuds-shot">
+          <img
+            src="images/algebuds-pdf-page3-1.png"
+            alt="Algebuds classroom world with Dot, a workbook, a classroom board, and chat."
+          >
+          <figcaption>
+            The chat is placed alongside a classroom world and workbook modal to support the SU's
+            positioning as tutor.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="algebuds-paper" aria-label="Theoretical background and why LLMs">
+        <article class="case-section algebuds-section algebuds-section-wide">
+          <p class="section-label">theoretical background and why LLMs</p>
+          <h2>Recursive feedback turns partial explanations into something students can inspect.</h2>
           <p>
-            One prototype direction treats algebra practice like a collaborative scramble:
-            students help robot pets prep, try, fix, and retry problem-solving moves in the
-            style of
-            <a href="https://ghosttowngames.com/game/overcooked/" target="_blank" rel="noreferrer">Overcooked!</a>
+            The child programming in LOGO knew a square had four sides and that explanation had served
+            him well in previous contexts. He used that knowledge to supply four copies of
+            <code>FW 10</code>, and he observed the turtle earnestly interpret his instructions. In that
+            moment of recursive feedback, he realizes he must modify his partial explanation to adapt
+            to this new context, and make connections with new ideas such as angles and rotation.
           </p>
+          <p>
+            The structure of this prototype is built on theories of student conceptions-in-progress
+            and layers of feedback. First, we reconceive misconceptions<sup><a href="#ref-smith">3</a></sup>
+            not as wrong ideas to be replaced, but instead as useful conceptions in previous contexts
+            that need refinement as contexts mature. Thus, we aim to draw out student explanations of
+            their conceptions in order to interpret, refine, and grow them with feedback.
+          </p>
+          <p>
+            The feedback typically afforded by computers is evaluative: the computer can quickly say
+            if a highly structured response is right or wrong. With LLMs, computers are now much more
+            capable of giving interpretive<sup><a href="#ref-wiliam">4</a></sup> feedback on natural
+            language inputs. We elicit a student's natural language informal and imprecise partial
+            conception, and we represent it back to them as the AT's solution attempt and commentary.
+            In this method, we also supply recursive feedback<sup><a href="#ref-okita">5</a></sup>.
+            The student is not just "learning by teaching" the AT, they get recursive feedback from
+            observing the AT use their explanation to perform a task.
+          </p>
+        </article>
+
+        <aside class="algebuds-loop" aria-label="The Algebuds core loop">
+          <p class="section-label">the core loop</p>
+          <ol>
+            <li>The AT asks for help on a problem.</li>
+            <li>
+              The SU responds in natural language, expressing their understanding however precisely
+              or imprecisely they can.
+            </li>
+            <li>
+              The AT interprets the explanation, asks follow-up questions, and attempts to apply what
+              it has been taught to the problem.
+            </li>
+            <li>
+              The SU observes the AT's attempt in the workbook. This is the recursive feedback step:
+              the student sees their own explanation enacted, and can assess whether it was enough.
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="algebuds-wide-section" aria-label="Workbook and chat evidence">
+        <figure class="algebuds-shot">
+          <img
+            src="images/algebuds-equation-retry.png"
+            alt="Dot tries new equation problems in the workbook after learning about keeping equations balanced."
+          >
+          <figcaption>
+            The SU and AT converse informally while Dot's procedural work remains observable.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="algebuds-design" aria-label="Algebuds design decisions">
+        <div class="algebuds-design-intro">
+          <p class="section-label">design decisions</p>
+          <h2>The important constraint is that Dot genuinely needs the student's ideas to proceed.</h2>
         </div>
+
+        <article class="algebuds-decision-card">
+          <h3>Multiple LLMs</h3>
+          <h4>Constrained Agent-as-Tutee LLM</h4>
+          <p>
+            The AT is deliberately limited so that it cannot solve the problems and needs help from
+            the student. The fine tuning of this constraint is a good area for future research.
+          </p>
+          <h4>Knowledge State Modifier LLM</h4>
+          <p>
+            A separate LLM evaluates each of the SU's explanations and updates the AT's internal
+            knowledge state: a structured list of active misconceptions and conceptual gaps. This
+            state is never surfaced to the student. Making it visible would do the metacognitive work
+            for them. The student infers the AT's progress only by watching its behavior change. This
+            is a good area for further refinement.
+          </p>
+          <h4>Problem Generator LLM</h4>
+          <p>
+            A third model selects pedagogically sequenced problems drawing on the rich landscape of
+            partial conceptions students may bring to an Algebra 1 course.
+          </p>
+        </article>
+
+        <article class="algebuds-decision-card">
+          <h3>Environment design</h3>
+          <h4>Classroom world</h4>
+          <p>
+            The AT lives in a classroom scene that grounds the relationship between the SU, the AT,
+            and the problems. The SU visits the AT in its world, a less threatening position than
+            being the one who needs help, and can both chat with and observe it.
+          </p>
+          <h4>Chat style</h4>
+          <p>
+            The AT communicates like a peer: casual, earnest, and sending multiple short chat bubbles
+            rather than one long reply. The bubbles serve as punctuation and pacing cues, making the
+            conversation feel live rather than like receiving a document.
+          </p>
+          <h4>Observable workbook with side chat</h4>
+          <p>
+            Watching the AT perform is essential; conversation alone is not enough. The workbook makes
+            the AT's procedural work visible at the same time it is having a conceptual conversation
+            with the student. These two channels run in parallel deliberately.
+          </p>
+        </article>
+
+        <article class="algebuds-decision-card">
+          <h3>Feedback</h3>
+          <h4>Interpretive</h4>
+          <p>
+            The key contribution of LLMs here is interpretation: a student's informal natural language
+            explanation is received, understood, and represented back as the AT's solution attempt and
+            commentary. The student sees their own thinking enacted, which is the interpretive feedback
+            that computers could not previously provide.
+          </p>
+          <h4>Evaluative</h4>
+          <p>
+            A timer marks the AT's final answer and resolves to a correct or incorrect indicator. A
+            subtle affordance: the timer gives the SU a beat to judge the work themselves and anticipate
+            the outcome before it is confirmed.
+          </p>
+          <h4>Recursive</h4>
+          <p>
+            Finally, the student observes how well their explanation has served the AT in performing
+            the task of solving algebra problems.
+          </p>
+        </article>
+
+        <article class="algebuds-decision-card">
+          <h3>Onboarding</h3>
+          <p>
+            I included an onboarding flow around much simpler content (arithmetic) designed to show
+            the core loop in brief by supplying suggested input text without asking the user to type
+            yet. The user arrives at the main interaction having already had a taste of success.
+          </p>
+        </article>
+      </section>
+
+      <section class="algebuds-paper algebuds-future" aria-label="Future directions">
+        <article class="case-section algebuds-section algebuds-section-wide">
+          <p class="section-label">future</p>
+          <h2>Success will look like getting student engagement first.</h2>
+          <p>
+            There are a number of open questions about this prototype. First, can the constrained LLM
+            AT both adapt to new inputs coming in and remain properly constrained so as not to break
+            the necessary relationship with the SU? Second, how do real students engage with this?
+            There are also possible other modes to consider beyond the classroom-workbook-chat arrangement.
+          </p>
+          <p>
+            Success will look like getting student engagement first. Finding a modality that real
+            students in real classrooms work with will allow those students to generate a lot of
+            written explanations. This wealth of new written content could be further LLM analyzed and
+            summarized for the teacher of the class, giving them a very free form and powerful formative
+            assessment tool.
+          </p>
+        </article>
+      </section>
+
+      <section class="algebuds-history" aria-label="Algebuds history and branches">
+        <div class="algebuds-history-copy">
+          <p class="section-label">iteration</p>
+          <h2>History and Branches</h2>
+          <p>
+            The V2 prototype is not deployed currently since it uses LLM resources. See the repos if
+            you are interested, or check out V1.
+          </p>
+          <div class="algebuds-link-grid" aria-label="Algebuds links">
+            <a href="https://grumm1728.github.io/algebuds/" target="_blank" rel="noreferrer">
+              Open Algebuds V1
+            </a>
+            <a href="https://github.com/grumm1728/algebuds" target="_blank" rel="noreferrer">
+              V1 repository
+            </a>
+            <a href="https://github.com/grumm1728/algebuds-anthropic" target="_blank" rel="noreferrer">
+              V2 repository
+            </a>
+          </div>
+        </div>
+
         <figure class="algebuds-gif-frame">
           <img
             src="images/algebuds-kitchen-mode.gif"
             alt="Animated Algebuds kitchen mode prototype with robot pets moving around an algebra kitchen."
           >
+          <figcaption>
+            Kitchen mode explores another modality: algebra practice as collaborative prep, try, fix,
+            and retry.
+          </figcaption>
         </figure>
       </section>
+
+      <section class="algebuds-references" aria-label="References">
+        <p class="section-label">references</p>
+        <ol>
+          <li id="ref-papert">Papert, Seymour. <cite>Mindstorms: Children, Computers, and Powerful Ideas</cite>. Basic Books, Inc., 1980.</li>
+          <li id="ref-meyer">
+            Meyer, Dan.
+            <a href="https://www.linkedin.com/pulse/rip-khanmigo-edtech-industry-dreams-ai-tutors-dan-meyer-bfuec" target="_blank" rel="noreferrer">
+              "RIP Khanmigo &amp; Edtech Industry Dreams of AI Tutors."
+            </a>
+            Mathworlds, April 15, 2026.
+          </li>
+          <li id="ref-smith">
+            Smith, John P., Andrea A. DiSessa, and Jeremy Roschelle. "Misconceptions Reconceived:
+            A Constructivist Analysis of Knowledge in Transition." <cite>The Journal of the Learning Sciences</cite>
+            3, no. 2 (1994): 115-63.
+          </li>
+          <li id="ref-wiliam">Wiliam, Dylan. <cite>Embedded Formative Assessment</cite>. Solution Tree Press, 2011.</li>
+          <li id="ref-okita">
+            Okita, Sandra Y., and Daniel L. Schwartz.
+            <a href="https://aaalab.stanford.edu/assets/papers/2013/Learning_by_teaching_human_pupils.pdf" target="_blank" rel="noreferrer">
+              "Learning by Teaching Human Pupils and Teachable Agents: The Importance of Recursive Feedback."
+            </a>
+            <cite>Journal of the Learning Sciences</cite> 22, no. 3 (2013): 375-412.
+          </li>
+        </ol>
+      </section>
     </main>
+    <script src="algebuds.js"></script>
   </body>
 </html>

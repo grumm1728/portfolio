@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Algebuds",
     description:
-      "Teachable agents have rich pedagogy history--how do LLMs support them?",
+      "A learning design case study on flipping the chatbot tutor relationship: the student teaches Dot.",
     url: "algebuds.html",
     thumbnail: "algebuds",
     local: true,
@@ -143,23 +143,7 @@ const thumbnails = {
   kidlinksArt: `
     <img src="images/kidlinks-family-network.png" alt="" aria-hidden="true">`,
   algebuds: `
-    <svg class="algebuds-thumb" viewBox="0 0 240 132" aria-hidden="true">
-      <rect x="0" y="0" width="240" height="132" fill="#8fb9aa" stroke="none"></rect>
-      <path d="M0 0c38 10 56 34 62 72M0 70c30 0 50 14 62 42M22 0v132M42 0v132" stroke="rgba(255,255,255,0.2)" stroke-width="18"></path>
-      <rect x="38" y="22" width="142" height="78" rx="5" fill="#b46f3f" stroke="#56416d" stroke-width="4"></rect>
-      <path d="M50 34h126" stroke="#ffd27d" stroke-width="3" stroke-linecap="round"></path>
-      <rect x="70" y="46" width="38" height="17" fill="#8bb6ff" stroke="#333251" stroke-width="2"></rect>
-      <path d="M126 58l45-7 1 5-45 7z" fill="#ffd55f" stroke="#333251" stroke-width="2"></path>
-      <circle cx="194" cy="72" r="8" fill="#fff29a" stroke="#56416d" stroke-width="4"></circle>
-      <path d="M190 80v-8" stroke="#56416d" stroke-width="4" stroke-linecap="round"></path>
-      <ellipse cx="190" cy="112" rx="22" ry="6" fill="rgba(18,18,18,0.22)" stroke="none"></ellipse>
-      <rect x="172" y="79" width="36" height="34" rx="14" fill="#ef9ab8" stroke="#56416d" stroke-width="4"></rect>
-      <circle cx="184" cy="96" r="4" fill="#403252" stroke="none"></circle>
-      <circle cx="196" cy="96" r="4" fill="#403252" stroke="none"></circle>
-      <path d="M185 104h10" stroke="#403252" stroke-width="3" stroke-linecap="round"></path>
-      <rect x="180" y="116" width="22" height="14" rx="5" fill="#fff" stroke="#56416d" stroke-width="4"></rect>
-      <path d="M184 123h14" stroke="#56416d" stroke-width="3" stroke-linecap="round"></path>
-    </svg>`,
+    <img class="algebuds-card-image" src="images/algebuds-pdf-page3-3.png" alt="" aria-hidden="true">`,
 };
 
 const projectGrid = document.querySelector("#project-grid");

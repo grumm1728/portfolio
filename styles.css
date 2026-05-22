@@ -1663,198 +1663,105 @@ svg {
   margin: -20px 0 -12px;
 }
 
-.algebuds-thumb {
-  width: 100%;
-  height: 140px;
-}
-
-.thumbnail .algebuds-thumb {
-  width: 100%;
-  height: 140px;
+.thumbnail .algebuds-card-image {
+  object-position: 52% 36%;
+  mix-blend-mode: normal;
+  opacity: 1;
 }
 
 .algebuds-page {
-  width: min(1240px, calc(100% - 56px));
+  width: min(1280px, calc(100% - 56px));
 }
 
 .algebuds-hero {
   display: grid;
-  grid-template-columns: minmax(320px, 0.86fr) minmax(420px, 1.14fr);
-  gap: clamp(36px, 7vw, 84px);
-  align-items: center;
+  grid-template-columns: minmax(320px, 0.84fr) minmax(460px, 1.16fr);
+  gap: clamp(36px, 6vw, 78px);
+  align-items: start;
   max-width: none;
-  margin-bottom: 52px;
+  margin-bottom: 70px;
 }
 
 .algebuds-hero-copy {
-  max-width: 620px;
+  max-width: 650px;
 }
 
-.prototype-link,
-.research-link {
-  display: inline-block;
-  width: fit-content;
-  color: var(--blue);
-  font-size: 22px;
-  line-height: 1.1;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
-}
-
-.prototype-link {
-  margin-top: 28px;
-}
-
-.algebuds-scene {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.algebuds-scene svg {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  border: 4px solid var(--ink);
-  border-radius: 8px 5px 9px 6px;
-  background: #8fb9aa;
-  box-shadow: 0 14px 30px rgba(18, 18, 18, 0.12);
-}
-
-.scene-wall {
-  fill: #8fb9aa;
-}
-
-.scene-arc {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.24);
-  stroke-width: 36;
-}
-
-.lesson-board {
-  fill: #b46f3f;
-  stroke: #56416d;
-  stroke-width: 7;
-}
-
-.board-line {
-  fill: none;
-  stroke: #ffd27d;
-  stroke-linecap: round;
-  stroke-width: 5;
-}
-
-.equation-card {
-  fill: #8bb6ff;
-  stroke: #333251;
-  stroke-width: 4;
-}
-
-.chalk-step,
-.feedback-arrow,
-.bot-mouth,
-.bot-body-line,
-.bot-stem {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.chalk-step {
-  stroke: #ffd55f;
-  stroke-width: 5;
-}
-
-.feedback-arrow {
-  stroke: var(--blue);
-  stroke-width: 5;
-}
-
-.bot-shadow {
-  fill: rgba(18, 18, 18, 0.22);
-}
-
-.bot-antenna {
-  fill: #fff29a;
-  stroke: #56416d;
-  stroke-width: 6;
-}
-
-.bot-stem {
-  stroke: #56416d;
-  stroke-width: 6;
-}
-
-.bot-head {
-  fill: #ef9ab8;
-  stroke: #56416d;
-  stroke-width: 7;
-}
-
-.bot-eye {
-  fill: #403252;
-}
-
-.bot-mouth,
-.bot-body-line {
-  stroke: #403252;
-  stroke-width: 6;
-}
-
-.bot-body {
-  fill: #fff;
-  stroke: #56416d;
-  stroke-width: 7;
-}
-
-.algebuds-copy {
+.algebuds-paper {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 44px 72px;
-  max-width: 1120px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(34px, 5vw, 72px);
+  align-items: start;
+  margin-bottom: 70px;
 }
 
 .algebuds-section {
   padding-top: 0;
 }
 
-.algebuds-section p:not(.section-label) {
-  max-width: 100%;
+.algebuds-section h2 {
+  max-width: 740px;
 }
 
-.research-link {
+.algebuds-section p:not(.section-label) {
+  max-width: 740px;
+}
+
+.algebuds-section p + p {
   margin-top: 18px;
 }
 
-.algebuds-kitchen {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.68fr) minmax(420px, 1.32fr);
-  gap: clamp(28px, 5vw, 64px);
-  align-items: center;
-  margin-top: 72px;
-  padding-top: 42px;
-  border-top: 3px dashed rgba(18, 18, 18, 0.28);
+.algebuds-section code {
+  padding: 0 4px;
+  border-bottom: 2px solid rgba(0, 77, 255, 0.24);
+  color: var(--blue);
+  font-family: inherit;
 }
 
-.algebuds-kitchen-copy h2 {
-  margin: 0 0 16px;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 400;
-  line-height: 1;
-}
-
-.algebuds-kitchen-copy p:not(.section-label) {
-  max-width: 500px;
+.logo-command {
+  display: inline;
   margin: 0;
-  font-size: 22px;
-  line-height: 1.28;
+  padding: 0 2px;
+  color: var(--blue);
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
+.logo-command:hover,
+.logo-command:focus-visible {
+  color: #d01818;
+}
+
+.logo-command:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.algebuds-section sup {
+  font-family: var(--hand);
+  font-size: 0.62em;
+  line-height: 0;
+}
+
+.algebuds-section sup a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.algebuds-shot,
+.logo-writer,
 .algebuds-gif-frame {
   min-width: 0;
   margin: 0;
 }
 
+.algebuds-shot img,
 .algebuds-gif-frame img {
   display: block;
   width: 100%;
@@ -1863,6 +1770,263 @@ svg {
   border-radius: 8px 5px 9px 6px;
   background: #fff;
   box-shadow: 0 14px 30px rgba(18, 18, 18, 0.12);
+}
+
+.algebuds-hero-shot img {
+  aspect-ratio: 971 / 661;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.logo-writer {
+  align-self: center;
+  width: min(100%, 500px);
+  padding: 10px;
+  border: 3px solid var(--ink);
+  border-radius: 8px 5px 9px 6px;
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 0 14px 30px rgba(18, 18, 18, 0.12);
+}
+
+.logo-writer-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 540 / 300;
+  border: 2px solid rgba(18, 18, 18, 0.2);
+  border-radius: 5px;
+  background: #fbf8ec;
+}
+
+#logo-grid path {
+  stroke: rgba(78, 166, 224, 0.38);
+  stroke-width: 1;
+}
+
+.logo-grid-bg {
+  fill: url("#logo-grid");
+}
+
+.logo-axis {
+  fill: none;
+  stroke: rgba(18, 18, 18, 0.18);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+}
+
+.logo-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.logo-line-short {
+  transition: stroke-dashoffset 780ms ease;
+}
+
+.logo-line-long {
+  transition: stroke-dashoffset 1300ms ease;
+}
+
+.logo-writer.is-short .logo-line-short,
+.logo-writer.is-long .logo-line-long {
+  stroke-dashoffset: 0;
+}
+
+.logo-turtle {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+
+.logo-turtle-one {
+  transform: translate(78px, 104px) rotate(90deg) scale(0.82);
+  transition: transform 780ms ease;
+}
+
+.logo-writer.is-short .logo-turtle-one {
+  transform: translate(178px, 104px) rotate(90deg) scale(0.82);
+}
+
+.logo-turtle-two {
+  opacity: 0;
+  transform: translate(78px, 216px) rotate(90deg) scale(0.82);
+  transition: opacity 120ms ease, transform 1300ms ease;
+}
+
+.logo-writer.is-long .logo-turtle-two {
+  opacity: 1;
+  transform: translate(478px, 216px) rotate(90deg) scale(0.82);
+}
+
+.turtle-shell {
+  fill: var(--ink);
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.turtle-limbs {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.algebuds-shot figcaption,
+.logo-writer figcaption,
+.algebuds-gif-frame figcaption {
+  max-width: 760px;
+  margin-top: 12px;
+  color: var(--soft);
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.algebuds-wide-section {
+  width: min(100%, 1120px);
+  margin: 4px auto 76px;
+}
+
+.algebuds-loop {
+  margin: 0;
+  padding: 22px 24px 26px;
+  border: 3px solid rgba(18, 18, 18, 0.78);
+  border-radius: 7px 5px 8px 6px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.algebuds-loop ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.algebuds-loop li {
+  margin: 0 0 16px;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.algebuds-loop li:last-child {
+  margin-bottom: 0;
+}
+
+.algebuds-design {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  margin: 76px 0;
+}
+
+.algebuds-design-intro {
+  grid-column: 1 / -1;
+  max-width: 840px;
+}
+
+.algebuds-design-intro h2,
+.algebuds-history-copy h2,
+.algebuds-future h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.algebuds-decision-card {
+  padding: 26px 26px 28px;
+  border: 3px solid rgba(18, 18, 18, 0.76);
+  border-radius: 8px 5px 7px 6px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.algebuds-decision-card h3 {
+  margin: 0 0 18px;
+  color: var(--blue);
+  font-family: var(--hand);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.algebuds-decision-card h4 {
+  margin: 22px 0 6px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.algebuds-decision-card h4:first-of-type {
+  margin-top: 0;
+}
+
+.algebuds-decision-card p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 20px;
+  line-height: 1.28;
+}
+
+.algebuds-future {
+  display: block;
+  max-width: 920px;
+}
+
+.algebuds-history {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.78fr) minmax(420px, 1.22fr);
+  gap: clamp(32px, 5vw, 68px);
+  align-items: start;
+  margin: 78px 0;
+  padding-top: 44px;
+  border-top: 3px dashed rgba(18, 18, 18, 0.28);
+}
+
+.algebuds-history-copy p:not(.section-label) {
+  max-width: 560px;
+  margin: 18px 0 0;
+  font-size: 22px;
+  line-height: 1.28;
+}
+
+.algebuds-link-grid {
+  display: grid;
+  gap: 14px;
+  max-width: 430px;
+  margin-top: 26px;
+}
+
+.algebuds-link-grid a {
+  color: var(--blue);
+  font-size: 22px;
+  line-height: 1.1;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.algebuds-references {
+  max-width: 940px;
+  padding-top: 40px;
+  border-top: 3px solid rgba(18, 18, 18, 0.16);
+}
+
+.algebuds-references ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.algebuds-references li {
+  margin: 0 0 14px;
+  color: var(--soft);
+  font-size: 18px;
+  line-height: 1.32;
+}
+
+.algebuds-references a {
+  color: var(--blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 @media (max-width: 1180px) {
@@ -1966,16 +2130,14 @@ svg {
   }
 
   .algebuds-hero,
-  .algebuds-copy {
+  .algebuds-paper,
+  .algebuds-design,
+  .algebuds-history {
     grid-template-columns: 1fr;
   }
 
-  .algebuds-scene {
-    max-width: 640px;
-  }
-
-  .algebuds-kitchen {
-    grid-template-columns: 1fr;
+  .algebuds-hero-shot {
+    max-width: 760px;
   }
 }
 
@@ -2332,24 +2494,32 @@ svg {
   }
 
   .algebuds-hero h1 {
-    max-width: 340px;
+    max-width: 620px;
   }
 
-  .algebuds-copy {
-    gap: 34px;
+  .algebuds-paper,
+  .algebuds-design,
+  .algebuds-history {
+    gap: 30px;
   }
 
-  .algebuds-kitchen {
+  .algebuds-history {
     margin-top: 48px;
     padding-top: 32px;
   }
 
-  .algebuds-kitchen-copy p:not(.section-label) {
+  .algebuds-section p:not(.section-label),
+  .algebuds-history-copy p:not(.section-label) {
     font-size: 21px;
   }
 
-  .prototype-link,
-  .research-link {
-    font-size: 21px;
+  .algebuds-decision-card {
+    padding: 22px 20px 24px;
+  }
+
+  .algebuds-decision-card p,
+  .algebuds-loop li,
+  .algebuds-link-grid a {
+    font-size: 20px;
   }
 }
