@@ -72,6 +72,7 @@ Use existing case-study classes and structure before inventing new ones: `case-b
 
 Applet pages should be focused and manipulable quickly.
 
+- Follow the shared applet design principles in `applets/DESIGN.md` when adding or revising math applets.
 - Lead with a direct mathematical invitation, such as "Drag point C."
 - Make the first interaction obvious.
 - Keep the applet centered on one idea.
