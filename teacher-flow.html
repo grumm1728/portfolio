@@ -3,255 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="A portfolio case study on designing interactive lessons around teacher flow."
-    >
-    <title>Designing for Teacher Flow in Interactive Lessons | Scott Farrar</title>
-    <link rel="stylesheet" href="styles.css?v=teacher-flow-20260429">
+    <meta name="robots" content="noindex,follow">
+    <meta name="description" content="Teacher Flow Interactive Slides has moved to Scott Farrar's current site.">
+    <link rel="canonical" href="https://sfxmath.com/work/teacher-flow-interactive-slides/">
+    <meta http-equiv="refresh" content="0; url=https://sfxmath.com/work/teacher-flow-interactive-slides/">
+    <title>Teacher Flow Interactive Slides has moved | Scott Farrar</title>
+    <script>
+      window.location.replace("https://sfxmath.com/work/teacher-flow-interactive-slides/" + window.location.hash);
+    </script>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; }
+      body { margin: 0; color: #20252b; background: #f5f8fa; }
+      main { box-sizing: border-box; width: min(42rem, calc(100% - 2rem)); margin: 12vh auto; padding: 2rem; background: white; border: 2px solid #20252b; border-radius: 0.75rem; }
+      h1 { margin-top: 0; line-height: 1.15; }
+      p { line-height: 1.6; }
+      a { color: #075f8f; font-weight: 700; }
+    </style>
   </head>
-  <body class="case-body">
-    <main class="case-page">
-      <a class="case-back-link" href="index.html">Back to portfolio</a>
-
-      <header class="case-hero">
-        <p class="case-kicker">math / ed product thinking</p>
-        <h1>Designing for Teacher Flow in Interactive Lessons</h1>
-        <p class="case-subtitle">
-          Teachers don't use interactive tools during class when they break the flow of instruction.
-        </p>
-      </header>
-
-      <section class="scroll-case" aria-label="Teacher flow case study">
-        <div class="scroll-copy">
-          <section class="case-section scroll-step" id="problem" data-state="problem">
-            <p class="section-label">problem</p>
-            <h2>Every transition asks the teacher to win the room back.</h2>
-            <p>
-              A teacher clicks from slides into an external interactive and the classroom flow breaks.
-            </p>
-            <p>
-              Even a small transition&mdash;new URL, loading screen, window juggling&mdash;can interrupt
-              instruction and student attention.
-            </p>
-          </section>
-
-          <section class="case-section scroll-step insight-section" id="insight" data-state="insight">
-            <p class="section-label">insight</p>
-            <blockquote>Teachers optimize for flow over functionality.</blockquote>
-            <p>
-              Some teachers spend time screenshotting curriculum slides into PowerPoint just to regain
-              speed and small-scale editability, even though they lose interactive features.
-            </p>
-          </section>
-
-          <section class="case-section scroll-step" id="solution" data-state="solution">
-            <p class="section-label">solution</p>
-            <h2>Slides apps AND interactives must design for flow.</h2>
-            <p>The interactive must be a part of the slides experience.</p>
-            <ul class="case-list">
-              <li>No external URL</li>
-              <li>No loading screen</li>
-              <li>No window switching</li>
-            </ul>
-            <p>The interactive itself must have intentional design.</p>
-            <ul class="case-list">
-              <li>Inviting teaser state</li>
-              <li>Only one thing to do (at least at first)</li>
-              <li>Delightful feedback</li>
-            </ul>
-          </section>
-
-          <section class="case-section scroll-step" id="editing" data-state="editing">
-            <p class="section-label">just enough customization</p>
-            <h2>Teachers still need their voice.</h2>
-            <p>
-              Teachers will still go back to PowerPoint if they can't talk to their students. But
-              matching a full feature set is not necessary. Teachers need just enough customization
-              to have their relationship with their class. Focus on what they can do with a whiteboard
-              marker.
-            </p>
-            <ul class="callout-list">
-              <li>Add quick text</li>
-              <li>Draw an arrow</li>
-              <li>Must be easy</li>
-              <li>Live or ahead of time</li>
-              <li>From laptop or projection screen (if smartboard)</li>
-            </ul>
-          </section>
-
-          <section class="case-section scroll-step" id="impact" data-state="impact">
-            <p class="section-label">impact</p>
-            <h2>Flow protects attention.</h2>
-            <p>
-              By removing transitions and keeping customization lightweight, the teacher stays with
-              the class and students stay focused.
-            </p>
-          </section>
-        </div>
-
-        <figure class="classroom-sticky" data-state="problem" aria-label="Dual screen classroom illustration">
-          <div class="projection-screen">
-            <p class="screen-label">projection screen</p>
-            <div class="screen-stage">
-              <div class="screen-state state-problem">
-                <p>CLICK LINK TO<br>LOSE THE CLASS</p>
-              </div>
-              <div class="screen-state state-insight">
-                <p class="skipped-text">interactive<br>skipped</p>
-              </div>
-              <div class="screen-state state-solution">
-                <div class="quad-interactive" aria-hidden="true">
-                  <svg viewBox="0 0 220 132">
-                    <path class="quad-grid-line" d="M34 105H200M34 78H200M34 51H200M58 22V112M94 22V112M130 22V112M166 22V112"></path>
-                    <polygon class="quad-shape" points="76 92 94 42 172 42 188 92">
-                      <animate attributeName="points" dur="2200ms" repeatCount="indefinite" values="76 92 94 42 172 42 188 92;76 92 94 42 186 36 188 92;76 92 94 42 180 58 188 92;76 92 94 42 166 46 188 92;76 92 94 42 172 42 188 92"></animate>
-                    </polygon>
-                    <line class="quad-diagonal quad-one" x1="76" y1="92" x2="172" y2="42">
-                      <animate attributeName="x2" dur="2200ms" repeatCount="indefinite" values="172;186;180;166;172"></animate>
-                      <animate attributeName="y2" dur="2200ms" repeatCount="indefinite" values="42;36;58;46;42"></animate>
-                    </line>
-                    <line class="quad-diagonal quad-two" x1="94" y1="42" x2="188" y2="92"></line>
-                    <circle class="quad-point" cx="172" cy="42" r="5">
-                      <animate attributeName="cx" dur="2200ms" repeatCount="indefinite" values="172;186;180;166;172"></animate>
-                      <animate attributeName="cy" dur="2200ms" repeatCount="indefinite" values="42;36;58;46;42"></animate>
-                    </circle>
-                    <path class="quad-arrow" d="M156 25c16-15 31-13 42-2"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="screen-state state-editing">
-                <div class="quad-interactive annotated-quad" aria-hidden="true">
-                  <svg viewBox="0 0 220 132">
-                    <path class="quad-grid-line" d="M34 105H200M34 78H200M34 51H200M58 22V112M94 22V112M130 22V112M166 22V112"></path>
-                    <polygon class="quad-shape" points="76 92 94 42 172 42 154 92"></polygon>
-                    <line class="quad-diagonal quad-one" x1="76" y1="92" x2="172" y2="42"></line>
-                    <line class="quad-diagonal quad-two" x1="94" y1="42" x2="154" y2="92"></line>
-                    <circle class="quad-point" cx="172" cy="42" r="5"></circle>
-                    <path class="annotation-arrow" d="M132 25 C150 14 164 20 171 36"></path>
-                  </svg>
-                  <p class="purple-note">if parallelogram...</p>
-                </div>
-              </div>
-              <div class="screen-state state-impact">
-                <div class="quad-interactive annotated-quad" aria-hidden="true">
-                  <svg viewBox="0 0 220 132">
-                    <path class="quad-grid-line" d="M34 105H200M34 78H200M34 51H200M58 22V112M94 22V112M130 22V112M166 22V112"></path>
-                    <polygon class="quad-shape" points="76 92 94 42 172 42 154 92"></polygon>
-                    <line class="quad-diagonal quad-one" x1="76" y1="92" x2="172" y2="42"></line>
-                    <line class="quad-diagonal quad-two" x1="94" y1="42" x2="154" y2="92"></line>
-                    <circle class="quad-point" cx="172" cy="42" r="5"></circle>
-                    <path class="annotation-arrow" d="M132 25 C150 14 164 20 171 36"></path>
-                  </svg>
-                  <p class="purple-note">if parallelogram...</p>
-                </div>
-              </div>
-            </div>
-            <span class="screen-pull" aria-hidden="true"></span>
-          </div>
-
-          <div class="teacher-laptop">
-            <p class="screen-label">teacher computer</p>
-            <div class="laptop-display">
-              <div class="screen-state state-problem">
-                <span class="ppt-dot">P</span>
-              </div>
-              <div class="screen-state state-insight">
-                <span class="ppt-dot">P</span>
-              </div>
-              <div class="screen-state state-solution">
-                <div class="quad-interactive laptop-quad" aria-hidden="true">
-                  <svg viewBox="0 0 220 132">
-                    <path class="quad-grid-line" d="M34 105H200M34 78H200M34 51H200M58 22V112M94 22V112M130 22V112M166 22V112"></path>
-                    <polygon class="quad-shape" points="76 92 94 42 172 42 188 92">
-                      <animate attributeName="points" dur="2200ms" repeatCount="indefinite" values="76 92 94 42 172 42 188 92;76 92 94 42 186 36 188 92;76 92 94 42 180 58 188 92;76 92 94 42 166 46 188 92;76 92 94 42 172 42 188 92"></animate>
-                    </polygon>
-                    <line class="quad-diagonal quad-one" x1="76" y1="92" x2="172" y2="42">
-                      <animate attributeName="x2" dur="2200ms" repeatCount="indefinite" values="172;186;180;166;172"></animate>
-                      <animate attributeName="y2" dur="2200ms" repeatCount="indefinite" values="42;36;58;46;42"></animate>
-                    </line>
-                    <line class="quad-diagonal quad-two" x1="94" y1="42" x2="188" y2="92"></line>
-                    <circle class="quad-point" cx="172" cy="42" r="5">
-                      <animate attributeName="cx" dur="2200ms" repeatCount="indefinite" values="172;186;180;166;172"></animate>
-                      <animate attributeName="cy" dur="2200ms" repeatCount="indefinite" values="42;36;58;46;42"></animate>
-                    </circle>
-                    <path class="quad-arrow" d="M156 25c16-15 31-13 42-2"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="screen-state state-editing">
-                <div class="quad-interactive laptop-quad annotated-quad" aria-hidden="true">
-                  <svg viewBox="0 0 220 132">
-                    <path class="quad-grid-line" d="M34 105H200M34 78H200M34 51H200M58 22V112M94 22V112M130 22V112M166 22V112"></path>
-                    <polygon class="quad-shape" points="76 92 94 42 172 42 154 92"></polygon>
-                    <line class="quad-diagonal quad-one" x1="76" y1="92" x2="172" y2="42"></line>
-                    <line class="quad-diagonal quad-two" x1="94" y1="42" x2="154" y2="92"></line>
-                    <circle class="quad-point" cx="172" cy="42" r="5"></circle>
-                    <path class="annotation-arrow" d="M132 25 C150 14 164 20 171 36"></path>
-                  </svg>
-                  <p class="purple-note">if parallelogram...</p>
-                </div>
-              </div>
-              <div class="screen-state state-impact">
-                <div class="quad-interactive laptop-quad annotated-quad" aria-hidden="true">
-                  <svg viewBox="0 0 220 132">
-                    <path class="quad-grid-line" d="M34 105H200M34 78H200M34 51H200M58 22V112M94 22V112M130 22V112M166 22V112"></path>
-                    <polygon class="quad-shape" points="76 92 94 42 172 42 154 92"></polygon>
-                    <line class="quad-diagonal quad-one" x1="76" y1="92" x2="172" y2="42"></line>
-                    <line class="quad-diagonal quad-two" x1="94" y1="42" x2="154" y2="92"></line>
-                    <circle class="quad-point" cx="172" cy="42" r="5"></circle>
-                    <path class="annotation-arrow" d="M132 25 C150 14 164 20 171 36"></path>
-                  </svg>
-                  <p class="purple-note">if parallelogram...</p>
-                </div>
-              </div>
-            </div>
-            <div class="laptop-base" aria-hidden="true"></div>
-          </div>
-
-          <div class="students" aria-hidden="true">
-            <span class="student student-one"><span class="raised-hand"></span></span>
-            <span class="student student-two"><span class="raised-hand"></span></span>
-            <span class="student student-three"><span class="raised-hand"></span></span>
-            <span class="student student-four"><span class="raised-hand"></span></span>
-          </div>
-
-          <figcaption>
-            <span class="caption-state state-problem">The handoff between apps is the product problem.</span>
-            <span class="caption-state state-insight">Teachers will trade interactivity for classroom control.</span>
-            <span class="caption-state state-solution">Uninterrupted flow allows curiosity to be sparked.</span>
-            <span class="caption-state state-editing">Light annotations preserve teacher voice without adding tool weight.</span>
-            <span class="caption-state state-impact">Less switching means more attention stays in the room.</span>
-          </figcaption>
-        </figure>
-      </section>
-
-      <aside class="pm-note" aria-label="Product management thinking">
-        <p class="section-label">pm thinking</p>
-        <dl>
-          <div>
-            <dt>Tradeoff:</dt>
-            <dd>Limit flexibility to guarantee reliability.</dd>
-          </div>
-          <div>
-            <dt>Product principle:</dt>
-            <dd>Flow over features.</dd>
-          </div>
-          <div>
-            <dt>Success signals:</dt>
-            <dd>
-              <ul>
-                <li>Reduced app switching during lessons</li>
-                <li>Increased interactive usage</li>
-                <li>Reduced exporting or rebuilding slides in PowerPoint</li>
-                <li>Teacher-reported prep time saved</li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
-      </aside>
+  <body>
+    <main>
+      <p>This legacy page has moved.</p>
+      <h1>Teacher Flow Interactive Slides</h1>
+      <p><a href="https://sfxmath.com/work/teacher-flow-interactive-slides/">Continue to the current page</a>.</p>
     </main>
-
-    <script src="teacher-flow.js"></script>
   </body>
 </html>
